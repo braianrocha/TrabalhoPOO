@@ -1,7 +1,15 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+Trabalho de POO - 2019/2
+                    Sistema de Vendas
+                        Grupo 
+                    Braian Luz Rocha
+                    Diego Santos 
+                    Gabrielle Cristina
+                    Jean Marcos 
+                    Nilo Sa Mayrink  
+                    Ruan Pablo Gomes
+
+                    
  */
 package trabalhopoo;
 
