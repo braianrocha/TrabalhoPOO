@@ -1,5 +1,5 @@
 /*
-Class que contem a Entrada e saida de dinheiro no estabelecimento.
+Class que contem a Entrada de produtos no estabelecimento.
 Relacionará a entrada de produtos com as vendas.
  */
 package trabalhopoo;
@@ -8,6 +8,6 @@ package trabalhopoo;
  *
  * @author Charlie04
  */
-public class EntradaSainda {
+public class Entrada {
     
 }
