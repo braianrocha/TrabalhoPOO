@@ -1,5 +1,5 @@
 /*
-Classe controlará as compras realizadas
+Classe controlará as compras realizadas para o estabelecimento , esses itens não são produtos.
  */
 package trabalhopoo;
 
