@@ -91,10 +91,7 @@ import java.util.List;
             produtos.add(new Estoque(nome, tipoProduto, codProduto, codBarras, preço, qtdMinima, ativo, fabricante, quantidade, validade, dataEntrada, dataCompra, valorUnitarioVenda, valorNota));
             qtdProdutos++;
     }
-//    public static void removeProduto(){
-//    
-        
-        public static void mostrarListaProdutos(){
+ public static void mostrarListaProdutos(){
         for(int i=0; i< produtos.size(); i++){
             System.out.println("Nome: " + produtos.get(i).getNome()
                    + "\nTipo do Produto: " + produtos.get(i).getTipoProduto()
@@ -112,8 +109,7 @@ import java.util.List;
                  
         }
     }
-        
-        
+  
     public static void removerProduto(){
             Scanner solicitaDado = new Scanner(System.in);
             System.out.print("Informe o código do Produto: ");
@@ -126,9 +122,6 @@ import java.util.List;
         }
     }
 
-    /**
-     * @return the fabricante
-     */
     public String getFabricante() {
         return fabricante;
     }
