@@ -1,5 +1,9 @@
 package trabalhopoo;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 
 public class Funcionario {
 
@@ -21,15 +25,41 @@ public class Funcionario {
         codigoF = valorCodigo;
         cpf = valorCPF;
     }
-
-    public static void mostrarFuncionario(){
-        for(int i=0; i < Funcionario.size(); i++){
-            System.out.println("Nome: " + Funcionario.get(i).getNome() + 
-                    ", Codigo: " + Funcionario.get(i).getCodigoF()) +
-                    ", CPF: " + Funcionario.get(i).getCpf();
-        }
+    
+    private static int qtdFuncionario;
+    private static List<Funcionario> funcionarios = new ArrayList<Funcionario>();
+    
+    public static void criarNovoFuncionario(){
+        
+        Scanner solicitaDado = new Scanner(System.in);
+        System.out.print("Informe o nome do Funcionario: ");
+        String nome = solicitaDado.next();
+        
+        solicitaDado = new Scanner(System.in);
+        System.out.print("Informe o codigo do Funcionario: ");
+        int codigoF = solicitaDado.nextInt();
+        
+        solicitaDado = new Scanner(System.in);
+        System.out.print("Informe o cpf do Funcionario: ");
+        int cpf = solicitaDado.nextInt();
+      
+        funcionarios.add(new Funcionario(nome, codigoF, cpf));
+        qtdFuncionario++;
     }
     
+    
+    public static void mostrarFuncionario(){
+       for(int i=0; i < funcionarios.size(); i++){
+           System.out.println("Nome: " + funcionarios.get(i).getNome() + 
+                               ", Codigo: " + funcionarios.get(i).getCodigoF() +
+                               ", CPF: " + funcionarios.get(i).getCpf());
+       }
+   }
+       
+       
+       
+       
+       
     public String getNome() {
         return nome;
     }
