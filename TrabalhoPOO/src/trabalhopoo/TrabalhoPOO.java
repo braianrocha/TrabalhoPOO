@@ -39,8 +39,8 @@ public class TrabalhoPOO {
          break;
          case 2: Estoque.mostrarListaProdutos();
          break;
-//         case 3: GerenciadorProfessor.criarNovoProfessor();
-//         break;
+         case 3: Estoque.removerProduto();
+         break;
          
         
         
