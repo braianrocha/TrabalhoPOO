@@ -25,16 +25,8 @@ public class Funcionario {
         codigoF = valorCodigo;
         cpf = valorCPF;
     }
-
- // public static void mostrarFuncionario(){
-  //     for(int i=0; i < Funcionario.size(); i++){
-  //         System.out.println("Nome: " + Funcionario.get(i).getNome() + 
-  //                  ", Codigo: " + Funcionario.get(i).getCodigoF()) +
-  //                 ", CPF: " + Funcionario.get(i).getCpf();
-  //     }
-  //  }
     
-  private static int qtdFuncionario;
+    private static int qtdFuncionario;
     private static List<Funcionario> funcionarios = new ArrayList<Funcionario>();
     
     public static void criarNovoFuncionario(){
@@ -54,6 +46,20 @@ public class Funcionario {
         funcionarios.add(new Funcionario(nome, codigoF, cpf));
         qtdFuncionario++;
     }
+    
+    
+    public static void mostrarFuncionario(){
+       for(int i=0; i < funcionarios.size(); i++){
+           System.out.println("Nome: " + funcionarios.get(i).getNome() + 
+                               ", Codigo: " + funcionarios.get(i).getCodigoF() +
+                               ", CPF: " + funcionarios.get(i).getCpf());
+       }
+   }
+       
+       
+       
+       
+       
     public String getNome() {
         return nome;
     }
