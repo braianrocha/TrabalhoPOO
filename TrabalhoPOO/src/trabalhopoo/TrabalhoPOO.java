@@ -9,22 +9,43 @@ Trabalho de POO - 2019/2
                     Nilo Sa Mayrink  
                     Ruan Pablo Gomes
 
-Diagrama de classes =  https://drive.google.com/file/d/1Jg3cCnilJlmRDdDjVrQVm2uyTn2tTFDD/view
-
+                    
  */
 package trabalhopoo;
 
-/**
- *
- * @author VERINHA
- */
-public class TrabalhoPOO {
+import java.util.Date;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.List;
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        System.out.println(" TESTE DA VERSAO 1");
-    }
+import java.util.Scanner;
+
+public class TrabalhoPOO {
     
+    public static void main(String[] args) {
+        
+        String menu = "\n1 - Inserir novo produto\n"
+                + "2 - Mostrar lista de produtos\n"
+                + "3 - Remover produto\n";
+        
+        int opcao = 0;
+        
+        while(opcao != 7){
+        System.out.println(menu);
+        Scanner solicitaDado = new Scanner(System.in);
+        opcao = solicitaDado.nextInt();     
+         switch(opcao){
+         case 1: Estoque.InsereNovoProduto();
+         break;
+         case 2: Estoque.mostrarListaProdutos();
+         break;
+//         case 3: GerenciadorProfessor.criarNovoProfessor();
+//         break;
+         
+        
+        
+        
+} 
+        }
+    }
 }
