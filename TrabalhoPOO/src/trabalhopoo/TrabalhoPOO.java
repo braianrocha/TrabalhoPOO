@@ -24,9 +24,10 @@ public class TrabalhoPOO {
     
     public static void main(String[] args) {
         
-        String menu = "\n1 - Inserir novo produto\n"
-                + "2 - Mostrar lista de produtos\n"
-                + "3 - Remover produto\n";
+        String menu = "\n1 - Inserir Funcionario\n"
+                + "2 - Inserir novo produto\n"
+                + "3 - Mostrar lista de produtos\n"
+                + "4 - Remover produto\n";
         
         int opcao = 0;
         
@@ -35,11 +36,12 @@ public class TrabalhoPOO {
         Scanner solicitaDado = new Scanner(System.in);
         opcao = solicitaDado.nextInt();     
          switch(opcao){
-         case 1: Estoque.InsereNovoProduto();
+         case 1: Funcionario.criarNovoFuncionario();   
+         case 2: Estoque.InsereNovoProduto();
          break;
-         case 2: Estoque.mostrarListaProdutos();
+         case 3: Estoque.mostrarListaProdutos();
          break;
-         case 3: Estoque.removerProduto();
+         case 4: Estoque.removerProduto();
          break;
        
         
