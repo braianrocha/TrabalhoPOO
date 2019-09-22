@@ -23,11 +23,5 @@ public class GerenciadorFuncionario {
         qtdFuncionario++;
     }
     
-    public static void mostrarFuncionario(){
-        for(int i=0; i < Funcionario.size(); i++){
-            System.out.println("Nome: " + Funcionario.get(i).getNome() + 
-                    ", Codigo: " + Funcionario.get(i).getCodigoF()) +
-                    ", CPF: " + Funcionario.get(i).getCpf();
-        }
-    }
+    
 }
