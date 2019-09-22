@@ -7,9 +7,6 @@ import java.util.List;
 
     public class Estoque extends Produto{
 
-    static void mostrarListaEstoque() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
         private String fabricante;
         private int quantidade;
         private String validade;
@@ -31,7 +28,7 @@ import java.util.List;
             }
     
         private static int qtdProdutos;
-        private static List<Produto> produtos = new ArrayList<>();
+        private static List<Estoque> produtos = new ArrayList<>();
     
         public static void InsereNovoProduto(){
 
@@ -96,11 +93,6 @@ import java.util.List;
     }
 //    public static void removeProduto(){
 //    
-//    
-//    
-//    public static void listaProduto(){
-//    
-//    }
         
         public static void mostrarListaProdutos(){
         for(int i=0; i< produtos.size(); i++){
@@ -109,9 +101,28 @@ import java.util.List;
                    + "\nCodigo do Produto: " + produtos.get(i).getCodProduto()
                    + "\nCodigo de barras: " + produtos.get(i).getCodBarras()
                    + "\nPreço: " + produtos.get(i).getPreço()
-                   + "\nQuantidade minima: " + produtos.get(i).getQtdMinima());  
+                   + "\nQuantidade minima: " + produtos.get(i).getQtdMinima()
+                   + "\nFabricante: " + produtos.get(i).getFabricante()
+                   + "\nQuantidade: " + produtos.get(i).getQuantidade()
+                   + "\nValidade: " + produtos.get(i).getValidade()
+                   + "\nData de Entrada: " + produtos.get(i).getDataEntrada()
+                   + "\nData da Compra: " + produtos.get(i).getDataCompra()
+                   + "\nValor Unitario da Venda: " + produtos.get(i).getValorUnitarioVenda()
+                   + "\nValor da Nota: " + produtos.get(i).getValorNota());
                  
-                  
+        }
+    }
+        
+        
+    public static void removerProduto(){
+            Scanner solicitaDado = new Scanner(System.in);
+            System.out.print("Informe o código do Produto: ");
+            String nome = solicitaDado.next();
+            
+        for(int i=0; i< produtos.size(); i++){
+                if(produtos.get(i).getCodProduto().equals(nome)){
+                    produtos.remove(i);
+                }
         }
     }
 
