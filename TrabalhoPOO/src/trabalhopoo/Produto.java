@@ -3,7 +3,7 @@ package trabalhopoo;
 import java.util.Date;
 
 
-public class Produto{
+public class Produto extends Estoque{
    private String nome;
    private String tipoProduto;   
    private String codProduto;
@@ -12,7 +12,8 @@ public class Produto{
    private int qtdMinima;
    private boolean ativo;     
    
-        public Produto(String nome, String tipoProduto, String codProduto, String codBarras, double preço, int qtdMinima, boolean ativo){
+        public Produto(String nome, String tipoProduto, String codProduto, String codBarras, double preço, int qtdMinima, boolean ativo, String fabricante, int quantidade, String validade, String dataEntrada, String dataCompra, double valorUnitarioVenda, double valorNota){
+        super(fabricante, quantidade, validade, dataEntrada, dataCompra, valorUnitarioVenda, valorNota);
         this.nome = nome;
         this.tipoProduto = tipoProduto;    
         this.codProduto = codProduto;
