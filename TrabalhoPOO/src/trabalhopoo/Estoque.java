@@ -121,6 +121,16 @@ import java.util.List;
                 }
         }
     }
+    
+    
+    public static Produto buscaProduto(int cod){
+        for(int i=0; i< produtos.size(); i++){
+                if(produtos.get(i).getCodProduto().equals(cod)){
+                    return produtos.get(i);
+                }
+        }
+            return null;
+    }
 
     public String getFabricante() {
         return fabricante;
