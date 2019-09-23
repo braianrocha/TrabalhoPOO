@@ -28,7 +28,8 @@ public class TrabalhoPOO {
                 + "2 - Mostrar Funcionario\n"
                 + "3 - Inserir novo produto\n"
                 + "4 - Mostrar lista de produtos\n"
-                + "5 - Remover produto\n";
+                + "5 - Remover produto\n"
+                + "8 - Cadastrar Fornecedor\n";
         
         int opcao = 0;
         
@@ -46,6 +47,8 @@ public class TrabalhoPOO {
          case 4: Estoque.mostrarListaProdutos();
          break;
          case 5: Estoque.removerProduto();
+         break;
+         case 8: Fornecedor.novoFornecedor();
          break;
        
         

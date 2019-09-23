@@ -54,9 +54,8 @@ import java.util.List;
             System.out.print("Informe a quantidade minima deste produto: ");
             int qtdMinima = solicitaDado.nextInt();
 
-            solicitaDado = new Scanner(System.in);
-            System.out.print("Informe a a situaçao do produto: ");
-            boolean ativo = solicitaDado.hasNextBoolean();
+ 
+            boolean ativo = true;
             
             solicitaDado = new Scanner(System.in);
             System.out.print("Informe o fabricante do Produto: ");
@@ -124,8 +123,42 @@ import java.util.List;
     public static Produto buscaProduto(int cod){
         for(int i=0; i< produtos.size(); i++){
                 if(produtos.get(i).getCodProduto().equals(cod)){
-                    return produtos.get(i);
+                    if( !(produtos.get(i).isAtivo()) ||  produtos.get(i).getQuantidade() < 1 ){
+                        return null;
+                    }else{
+                    return produtos.get(i);    
+                    }
                 }
+        }
+            return null;
+    }
+    
+        public static Produto insereProdutoVenda(int cod, int quantidade){
+        for(int i=0; i< produtos.size(); i++){
+                if(produtos.get(i).getCodProduto().equals(cod)){
+                    if( !(produtos.get(i).isAtivo()) ||  produtos.get(i).getQuantidade() < quantidade ){
+                        return null;
+                    }else{
+                    return produtos.get(i);    
+                    }
+                }
+        }
+            return null;
+    }
+    
+    
+       public static Produto removeProdutoEstoque(List<Produto> remover){
+        for(int i=0; i< remover.size(); i++){
+
+            
+//                if(produtos.get(i).getCodProduto().equals(cod)){
+//                    if( !(produtos.get(i).isAtivo()) ||  produtos.get(i).getQuantidade() < 1 ){
+//                        return null;
+//                    }else{
+//                    return produtos.get(i);    
+//                    }
+//                }
+                
         }
             return null;
     }
