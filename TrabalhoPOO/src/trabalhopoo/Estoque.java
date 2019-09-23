@@ -31,20 +31,20 @@ import java.util.List;
         public static void InsereNovoProduto(){
 
             Scanner solicitaDado = new Scanner(System.in);
-            System.out.print("Informe o nome do Produto: ");
-            String nome = solicitaDado.next();
+            System.out.print("Nome do Produto: ");
+            String nome = solicitaDado.nextLine();
 
             solicitaDado = new Scanner(System.in);
-            System.out.print("Informe o tipo do produto: ");
-            String tipoProduto = solicitaDado.next();
+            System.out.print("Tipo do produto: ");
+            String tipoProduto = solicitaDado.nextLine();
 
             solicitaDado = new Scanner(System.in);
-            System.out.print("Informe o codigo do Produto: ");
-            String codProduto = solicitaDado.next();
+            System.out.print("Codigo do Produto: ");
+            String codProduto = solicitaDado.nextLine();
 
             solicitaDado = new Scanner(System.in);
-            System.out.print("Informe o codigo de barras do produto: ");
-            String codBarras = solicitaDado.next();
+            System.out.print("Codigo de barras do produto: ");
+            String codBarras = solicitaDado.nextLine();
 
             solicitaDado = new Scanner(System.in);
             System.out.print("Informe o preço do produto: ");
@@ -59,30 +59,30 @@ import java.util.List;
             
             solicitaDado = new Scanner(System.in);
             System.out.print("Informe o fabricante do Produto: ");
-            String fabricante = solicitaDado.next();
+            String fabricante = solicitaDado.nextLine();
             
             solicitaDado = new Scanner(System.in);
-            System.out.print("Informe a quantidade total deste produto: ");
+            System.out.print("Quantidade total deste produto: ");
             int quantidade = solicitaDado.nextInt();
             
             solicitaDado = new Scanner(System.in);
-            System.out.print("Informe a validade deste produto: ");
-            String validade = solicitaDado.next();
+            System.out.print("Validade deste produto: ");
+            String validade = solicitaDado.nextLine();
             
             solicitaDado = new Scanner(System.in);
-            System.out.print("Informe a data de entrada deste produto: ");
-            String dataEntrada = solicitaDado.next();
+            System.out.print("Data de entrada deste produto: ");
+            String dataEntrada = solicitaDado.nextLine();
             
             solicitaDado = new Scanner(System.in);
-            System.out.print("Informe a data da compra deste produto: ");
-            String dataCompra = solicitaDado.next();
+            System.out.print("Data da compra deste produto: ");
+            String dataCompra = solicitaDado.nextLine();
             
             solicitaDado = new Scanner(System.in);
-            System.out.print("Informe o valor de cada unidade deste produto: ");
+            System.out.print("Valor de cada unidade deste produto: ");
             double valorUnitarioVenda = solicitaDado.nextDouble();
             
             solicitaDado = new Scanner(System.in);
-            System.out.print("Informe o valor da nota: ");
+            System.out.print("Valor da nota: ");
             double valorNota = solicitaDado.nextDouble();
 
             produtos.add(new Produto(nome, tipoProduto, codProduto, codBarras, preço, qtdMinima, ativo, fabricante, quantidade, validade, dataEntrada, dataCompra, valorUnitarioVenda, valorNota));
