@@ -5,8 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.List;
 
-    public class Estoque extends Produto{
-
+    public class Estoque{
         private String fabricante;
         private int quantidade;
         private String validade;
@@ -15,8 +14,7 @@ import java.util.List;
         private double valorUnitarioVenda;
         private double valorNota;
             
-            public Estoque(String nome, String tipoProduto, String codProduto, String codBarras, double preço, int qtdMinima, boolean ativo, String fabricante, int quantidade, String validade, String dataEntrada, String dataCompra, double valorUnitarioVenda, double valorNota){
-                super(nome, tipoProduto, codProduto, codBarras, preço, qtdMinima, false);
+            public Estoque(String fabricante, int quantidade, String validade, String dataEntrada, String dataCompra, double valorUnitarioVenda, double valorNota){                
                 this.fabricante = fabricante;
                 this.quantidade = quantidade;
                 this.validade = validade;
@@ -28,7 +26,7 @@ import java.util.List;
             }
     
         private static int qtdProdutos;
-        private static List<Estoque> produtos = new ArrayList<>();
+        private static List<Produto> produtos = new ArrayList<>();
     
         public static void InsereNovoProduto(){
 
@@ -56,9 +54,8 @@ import java.util.List;
             System.out.print("Informe a quantidade minima deste produto: ");
             int qtdMinima = solicitaDado.nextInt();
 
-            solicitaDado = new Scanner(System.in);
-            System.out.print("Informe a a situaçao do produto: ");
-            boolean ativo = solicitaDado.hasNextBoolean();
+ 
+            boolean ativo = true;
             
             solicitaDado = new Scanner(System.in);
             System.out.print("Informe o fabricante do Produto: ");
@@ -88,7 +85,7 @@ import java.util.List;
             System.out.print("Informe o valor da nota: ");
             double valorNota = solicitaDado.nextDouble();
 
-            produtos.add(new Estoque(nome, tipoProduto, codProduto, codBarras, preço, qtdMinima, ativo, fabricante, quantidade, validade, dataEntrada, dataCompra, valorUnitarioVenda, valorNota));
+            produtos.add(new Produto(nome, tipoProduto, codProduto, codBarras, preço, qtdMinima, ativo, fabricante, quantidade, validade, dataEntrada, dataCompra, valorUnitarioVenda, valorNota));
             qtdProdutos++;
     }
  public static void mostrarListaProdutos(){
@@ -126,8 +123,42 @@ import java.util.List;
     public static Produto buscaProduto(int cod){
         for(int i=0; i< produtos.size(); i++){
                 if(produtos.get(i).getCodProduto().equals(cod)){
-                    return produtos.get(i);
+                    if( !(produtos.get(i).isAtivo()) ||  produtos.get(i).getQuantidade() < 1 ){
+                        return null;
+                    }else{
+                    return produtos.get(i);    
+                    }
                 }
+        }
+            return null;
+    }
+    
+        public static Produto insereProdutoVenda(int cod, int quantidade){
+        for(int i=0; i< produtos.size(); i++){
+                if(produtos.get(i).getCodProduto().equals(cod)){
+                    if( !(produtos.get(i).isAtivo()) ||  produtos.get(i).getQuantidade() < quantidade ){
+                        return null;
+                    }else{
+                    return produtos.get(i);    
+                    }
+                }
+        }
+            return null;
+    }
+    
+    
+       public static Produto removeProdutoEstoque(List<Produto> remover){
+        for(int i=0; i< remover.size(); i++){
+
+            
+//                if(produtos.get(i).getCodProduto().equals(cod)){
+//                    if( !(produtos.get(i).isAtivo()) ||  produtos.get(i).getQuantidade() < 1 ){
+//                        return null;
+//                    }else{
+//                    return produtos.get(i);    
+//                    }
+//                }
+                
         }
             return null;
     }
