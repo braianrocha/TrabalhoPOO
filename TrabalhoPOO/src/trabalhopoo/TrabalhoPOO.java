@@ -56,10 +56,10 @@ public class TrabalhoPOO {
          break;
          case 8: GerenciadorEstoque.criaProdutoAleatorio();
          break;
+
        
         
-        
-        
+           
 } 
         }
     }
