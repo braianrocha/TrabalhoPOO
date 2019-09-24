@@ -29,7 +29,8 @@ public class TrabalhoPOO {
                 + "3 - Inserir novo produto\n"
                 + "4 - Mostrar lista de produtos\n"
                 + "6 - Nova Compra\n"
-                + "7 - Mostrar Compra\n";
+                + "7 - Mostrar Compra\n"
+                + "8 - Automatico produto\n";
                 
         
         int opcao = 0;
@@ -43,15 +44,17 @@ public class TrabalhoPOO {
          break;
          case 2: Funcionario.mostrarFuncionario();
          break;
-         case 3: Estoque.InsereNovoProduto();
+         case 3: GerenciadorEstoque.InsereNovoProduto();
          break;
-         case 4: Estoque.mostrarListaProdutos();
+         case 4: GerenciadorEstoque.mostrarListaProdutos();
          break;
-         case 5: Estoque.removerProduto();
+         case 5: GerenciadorEstoque.removerProduto();
          break;
          case 6: Compra.novaCompra();
          break;
          case 7: Compra.mostrarCompras();
+         break;
+         case 8: GerenciadorEstoque.criaProdutoAleatorio();
          break;
        
         

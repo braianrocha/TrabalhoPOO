@@ -10,8 +10,8 @@ import java.util.List;
         private String dataVenda;
         private Double valorVenda;
 
-        public Venda(int cod, String formaPag, String datVen,Double valorVen){
-            codVenda = cod;
+        public Venda( String formaPag, String datVen,Double valorVen){
+//            codVenda = cod;
             formaPagamento = formaPag;
             dataVenda = datVen;
             valorVenda = valorVen;
@@ -22,8 +22,7 @@ import java.util.List;
         
         public static void criarVenda(){
             Scanner solicitaDado = new Scanner(System.in);
-            System.out.print("Informe o codigo da venda");
-            int codVenda = solicitaDado.nextInt();
+            
             
             solicitaDado = new Scanner(System.in);
             System.out.println("Forma de pagamento");
@@ -37,11 +36,18 @@ import java.util.List;
             System.out.print("Informe o valor da venda");
             Double valorVenda = solicitaDado.nextDouble();
            
-            vendas.add(new Venda(codVenda, formaPagamento, dataVenda, valorVenda));
+            vendas.add(new Venda( formaPagamento, dataVenda, valorVenda));
             qtdVendas ++;
+            
             
         }
         
+            private static int qtdprodutos;
+            List<Produto> produtos1 = new ArrayList<>();
+            
+            private static void ListaProdutos(){
+                
+            }
          public static void mostrarVenda(){
             for(int i = 0; i< vendas.size(); i++){
                 System.out.print("codigo da venda: " +vendas.get(i).getCodVenda()

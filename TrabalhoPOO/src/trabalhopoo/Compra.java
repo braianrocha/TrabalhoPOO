@@ -45,14 +45,16 @@ public class Compra {
             System.out.print("Informe o fornecedor do produto comprado: ");
             String fornecedor = solicitaDado.next();
 
-       
+            compras.add(new Compra(valor, descricaoDaCompra, dataDaCompra, fornecedor));
+            qtdCompras ++;
+            
        
        
    }
    
    public static void mostrarCompras(){
         for(int i=0; i< compras.size(); i++){
-            System.out.println("Valor: " + compras.get(i).getValor()
+            System.out.println("\nValor: " + compras.get(i).getValor()
                    + "\n Descriçao: " + compras.get(i).getDescricaoDaCompra()
                    + "\n Codigo do Produto: " + compras.get(i).getDataDaCompra()
                    + "\n Fornecedor: " + compras.get(i).getFornecedor());
