@@ -18,7 +18,11 @@ public class Fornecedor {
         this.cpfCnpj = cpfCnpj;
         this.contato = contato;
         this.endereco = endereco;
+<<<<<<< HEAD
         this.ativo = ativo; 
+=======
+        this.ativo = ativo;
+>>>>>>> BuscaProduto
     }
     private static List<Fornecedor> fornecedor = new ArrayList<>();
     private static int qtdFornecedor;
