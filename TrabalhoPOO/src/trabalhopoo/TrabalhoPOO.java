@@ -30,12 +30,15 @@ public class TrabalhoPOO {
                 + "4 - Mostrar lista de produtos\n"
                 + "6 - Nova Compra\n"
                 + "7 - Mostrar Compra\n"
-                + "8 - Automatico produto\n";
+                + "8 - Automatico produto\n"
+                + "9 - Criar Venda\n"
+                + "10 - Mostar Lista\n";
+                
                 
         
         int opcao = 0;
         
-        while(opcao != 10){
+        while(opcao != 11){
         System.out.println(menu);
         Scanner solicitaDado = new Scanner(System.in);
         opcao = solicitaDado.nextInt();     
@@ -56,7 +59,11 @@ public class TrabalhoPOO {
          break;
          case 8: GerenciadorEstoque.criaProdutoAleatorio();
          break;
-
+         case 9: Venda.criarVenda();
+         break;
+         case 10: Venda.mostrarVenda();
+         break;
+         
        
         
            

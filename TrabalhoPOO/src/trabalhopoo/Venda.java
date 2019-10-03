@@ -8,23 +8,28 @@ import java.util.List;
         private int codVenda;
         private String formaPagamento;
         private String dataVenda;
-        private Double valorVenda;
-
-        public Venda( String formaPag, String datVen,Double valorVen){
+        private double valorVenda;
+        
+        public Venda(){
+            codVenda = 0;
+            formaPagamento = "";
+            dataVenda = "";
+            valorVenda = 0;
+        }
+        public Venda( String formaPag, String datVen){
+//            codigo tem que ser randomico por enquanto
 //            codVenda = cod;
             formaPagamento = formaPag;
             dataVenda = datVen;
-            valorVenda = valorVen;
+            
         }
-        
+        private static int qtdProdutos;
         private static int qtdVendas;
-        private static List<Venda> vendas = new ArrayList<>();
-        
+        private static List<Venda> vendas = new ArrayList<Venda>();
+        private static List<Produto> produtosVenda = new ArrayList<Produto>();
+ 
         public static void criarVenda(){
-            Scanner solicitaDado = new Scanner(System.in);
-            
-            
-            solicitaDado = new Scanner(System.in);
+            Scanner solicitaDado = new Scanner(System.in);                                 
             System.out.println("Forma de pagamento");
             String formaPagamento = solicitaDado.next();
             
@@ -32,30 +37,61 @@ import java.util.List;
             System.out.println("Insira da data da venda");
             String dataVenda = solicitaDado.next();
             
-            solicitaDado = new Scanner(System.in);
-            System.out.print("Informe o valor da venda");
-            Double valorVenda = solicitaDado.nextDouble();
-           
-            vendas.add(new Venda( formaPagamento, dataVenda, valorVenda));
-            qtdVendas ++;
             
-            
-        }
         
-            private static int qtdprodutos;
-            List<Produto> produtos1 = new ArrayList<>();
+            vendas.add(new Venda( formaPagamento, dataVenda));
+            qtdVendas++;
+            Venda.ListaProdutoVenda();
+          
             
-            private static void ListaProdutos(){
+            }
+            
+        public static void ListaProdutoVenda(){
+              Scanner solicitaDado = new Scanner(System.in);
+              System.out.print("Informe o codigo do produto");
+              int codigo = solicitaDado.nextInt();
+              
+              System.out.print("Informe a quantidade do produto");
+              int quantidade = solicitaDado.nextInt();
+              
+              for(int i=0; i<produtosVenda.size(); i++)  {
+              if(produtosVenda.get(i).getQuantidade() > quantidade){
+                  produtosVenda.add(GerenciadorEstoque.insereProdutoVenda(codigo, quantidade));
+              }else{
+                  System.out.println("Produto Indisponivel");
+                  
+              }
+              
+              Venda.CalculaValorTotal(quantidade);
                 
             }
-         public static void mostrarVenda(){
+             // remove o produto depois da compra ter sido realizada.
+//            produtosVenda.add(GerenciadorEstoque.removeProdutoEstoque(produtosVenda));
+               qtdProdutos++;
+          }
+//     Função esta incorreta.               
+     public static Double CalculaValorTotal(int quant) {
+             double valorTo = 0;
+             for(int i=0; i<produtosVenda.size(); i++){            
+             valorTo += produtosVenda.get(i).getPreço()*quant;
+             }
+         return valorTo; 
+       }
+        
+                
+        public static void mostrarVenda(){
             for(int i = 0; i< vendas.size(); i++){
-                System.out.print("codigo da venda: " +vendas.get(i).getCodVenda()
-                        +"Forma de Pagamento: "+vendas.get(i).getFormaPagamento()
-                        +"Data de emissão: "+vendas.get(i).getDataVenda()
-                        +"Valor: "+vendas.get(i).getValorVenda());
+                System.out.println("Forma de Pagamento: "+vendas.get(i).getFormaPagamento()
+                       +"\nData de emissão: "+vendas.get(i).getDataVenda());
+//          Corrigir: não está mostrando a lista de produtos.          
+               for(int x = 0; x< produtosVenda.size(); x++){   
+                    System.out.println("Nome do Produto: "+produtosVenda.get(x).getNome()
+                          +"Quantidade de produtos: "+produtosVenda.get(x).getQuantidade()
+                          +"Codigo do produto: "+ produtosVenda.get(x).getCodProduto());
+                            
+                }              
             }
-        }
+      }
 
     public int getCodVenda() {
         return codVenda;
