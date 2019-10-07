@@ -6,22 +6,19 @@ import java.util.Scanner;
 import java.util.List;
 
 
-/**
- *
- * @author Charlie04
- */
+
 public class Compra {
 
     private int valor;
     private String descricaoDaCompra;
     private String dataDaCompra;
-    private String fornecedor;
+    private int idfor;
     
-   public Compra(int valor, String descricaoDaCompra, String dataDaCompra, String fornecedor) {
+   public Compra(int valor, String descricaoDaCompra, String dataDaCompra, int idfor) {
         this.valor = valor;
         this.descricaoDaCompra = descricaoDaCompra;
         this.dataDaCompra = dataDaCompra;
-        this.fornecedor = fornecedor;
+        this.idfor = idfor;
     }
 
     private static int qtdCompras;
@@ -42,10 +39,12 @@ public class Compra {
             String dataDaCompra = solicitaDado.next();
 
             solicitaDado = new Scanner(System.in);
-            System.out.print("Informe o fornecedor do produto comprado: ");
-            String fornecedor = solicitaDado.next();
+            System.out.print("Informe o ID do fornecedor: ");
+            int idfor = solicitaDado.nextInt();
 
-            compras.add(new Compra(valor, descricaoDaCompra, dataDaCompra, fornecedor));
+            Fornecedor.buscaFornecedor(idfor);
+            
+            compras.add(new Compra(valor, descricaoDaCompra, dataDaCompra, idfor));
             qtdCompras ++;
             
        
@@ -57,7 +56,7 @@ public class Compra {
             System.out.println("\nValor: " + compras.get(i).getValor()
                    + "\n Descriçao: " + compras.get(i).getDescricaoDaCompra()
                    + "\n Codigo do Produto: " + compras.get(i).getDataDaCompra()
-                   + "\n Fornecedor: " + compras.get(i).getFornecedor());
+                   + "\n Fornecedor: " + compras.get(i).getIdfor());
                  
    
         }}
@@ -113,19 +112,18 @@ public class Compra {
     /**
      * @return the fornecedor
      */
-    public String getFornecedor() {
-        return fornecedor;
+    public int getIdfor() {
+        return idfor;
     }
 
     /**
-     * @param fornecedor the fornecedor to set
+     * @param idfor the fornecedor to set
      */
-    public void setFornecedor(String fornecedor) {
-        this.fornecedor = fornecedor;
+    public void setIdfor(int idfor) {
+        this.idfor= idfor;
     }
 
     /**
      * @return the valor
      */
 }
-
