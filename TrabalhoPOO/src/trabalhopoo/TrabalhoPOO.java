@@ -59,9 +59,9 @@ public class TrabalhoPOO {
          break;
          case 8: GerenciadorEstoque.criaProdutoAleatorio();
          break;
-         case 9: Venda.criarVenda();
+         case 9: GerenciadorVenda.criarVenda();
          break;
-         case 10: Venda.mostrarVenda();
+         case 10: 
          break;
          
        

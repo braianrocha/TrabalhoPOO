@@ -20,12 +20,19 @@ public class Produto extends ItemEstoque{
         this.codBarras = codBarras;
         this.preço = preço;
         this.qtdMinima = qtdMinima;
-        this.ativo = false;    
+        //this.ativo = false;    
         
         
 
 
 }
+
+    /**
+     *
+     */
+    public Produto() {
+        
+    }
 
  
 

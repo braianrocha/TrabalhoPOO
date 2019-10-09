@@ -20,6 +20,9 @@ public class ItemEstoque {
                 this.valorNota = valorNota;
                 
             }
+            
+    public ItemEstoque() {
+    }
 
     public String getFabricante() {
         return fabricante;
