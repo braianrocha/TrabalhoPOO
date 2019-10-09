@@ -21,7 +21,13 @@ public class Produto extends ItemEstoque{
         this.preço = preço;
         this.qtdMinima = qtdMinima;
         this.ativo = false;    
+        
+        
+
+
 }
+
+ 
 
     
     public String getNome() {

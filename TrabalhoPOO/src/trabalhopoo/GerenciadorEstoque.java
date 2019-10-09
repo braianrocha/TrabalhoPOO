@@ -15,7 +15,7 @@ public class GerenciadorEstoque{
             
             String nome = "Coca cola";
             String tipoProduto = "bebidas";
-            String codProduto = "4635";
+            String codProduto = "123";
             String codBarras = "392424";
             double preço = 4.50;
             int qtdMinima = 5;
@@ -153,19 +153,16 @@ public class GerenciadorEstoque{
     }
     
     
-       public static Produto removeProdutoEstoque(List<Produto> remover){
-        for(int i=0; i< remover.size(); i++){
-
-            
-//                if(produtos.get(i).getCodProduto().equals(cod)){
-//                    if( !(produtos.get(i).isAtivo()) ||  produtos.get(i).getQuantidade() < 1 ){
-//                        return null;
-//                    }else{
-//                    return produtos.get(i);    
-//                    }
-//                }
+       public static  void removeProdutoEstoque(String codProduto , Integer quantidadeProduto){
+       
+           for(int i=0; i< produtos.size(); i++){
+                if(produtos.get(i).getCodProduto().equals(codProduto)){
+                    if( produtos.get(i).getQuantidade() == quantidadeProduto ){
+                        produtos.get(i).setQuantidade( produtos.get(i).getQuantidade() - quantidadeProduto); 
+                    }
+                }
                 
         }
-            return null;
+            
     }
     }
