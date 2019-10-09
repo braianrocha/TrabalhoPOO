@@ -9,7 +9,8 @@ public class GerenciadorVenda{
     
         private static int qtdVendas;
         private  List<Produto> produtosVenda = new ArrayList<>();
-    
+        private static List<Venda> vendas = new ArrayList<Venda>();
+//        private  List<Produto> produtosVenda = new ArrayList<Produto>();
         
         public static void criarVenda(){
             Scanner solicitaDado = new Scanner(System.in);                                 

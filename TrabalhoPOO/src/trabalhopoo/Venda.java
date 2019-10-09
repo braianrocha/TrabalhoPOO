@@ -28,8 +28,7 @@ public class Venda {
     }
     private static int qtdProdutos;
     private static int qtdVendas;
-    private static List<Venda> vendas = new ArrayList<Venda>();
-//        private  List<Produto> produtosVenda = new ArrayList<Produto>();
+
 
     public int getCodVenda() {
         return codVenda;
@@ -71,13 +70,7 @@ public class Venda {
         Venda.qtdVendas = qtdVendas;
     }
 
-    public static List<Venda> getVendas() {
-        return vendas;
-    }
 
-    public static void setVendas(List<Venda> vendas) {
-        Venda.vendas = vendas;
-    }
 
     /**
      * @return the produtosVenda
